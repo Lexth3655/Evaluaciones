@@ -1,8 +1,14 @@
 ﻿namespace Parcial_1.Models
 {
-    public class Marca: BaseEntity
+    public partial class Marca: BaseEntity
     {
+        public Marca()
+        {
+
+        }
         public string nombre_marca { get; set; }
+
+
 
 
     }

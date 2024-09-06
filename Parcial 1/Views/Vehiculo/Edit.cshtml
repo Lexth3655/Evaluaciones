@@ -1,0 +1,64 @@
+﻿@model Parcial_1.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Vehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="modelo" class="control-label"></label>
+                <input asp-for="modelo" class="form-control" />
+                <span asp-validation-for="modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="anio" class="control-label"></label>
+                <input asp-for="anio" class="form-control" />
+                <span asp-validation-for="anio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cantidadPuertas" class="control-label"></label>
+                <input asp-for="cantidadPuertas" class="form-control" />
+                <span asp-validation-for="cantidadPuertas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="marcaID" class="control-label"></label>
+                <select asp-for="marcaID" class="form-control" asp-items="ViewBag.marcaID"></select>
+                <span asp-validation-for="marcaID" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group">
+                <label asp-for="fechaCreado" class="control-label"></label>
+                <input asp-for="fechaCreado" class="form-control" />
+                <span asp-validation-for="fechaCreado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fechaModificado" class="control-label"></label>
+                <input asp-for="fechaModificado" class="form-control" />
+                <span asp-validation-for="fechaModificado" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="activo" /> @Html.DisplayNameFor(model => model.activo)
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

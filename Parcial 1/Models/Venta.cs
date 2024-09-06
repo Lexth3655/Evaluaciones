@@ -7,8 +7,8 @@ namespace Parcial_1.Models
         public double totalVenta { get; set; }
         public int cantidad { get; set; }
 
-        [ForeignKey("marca_veh")]
-        public int marcaID { get; set; }
+        [ForeignKey("venta_veh")]
+        public int vehiculoID { get; set; }
         public Vehiculo vehiculoVent { get; set; }
     }
 }

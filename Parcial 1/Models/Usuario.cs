@@ -7,9 +7,9 @@ namespace Parcial_1.Models
         public string usuario { get; set; }
         public string clave { get; set;}
 
-        [ForeignKey("Empleado")]
-        public int empID { get; set; }
-        public Empleado empleado { get; set; }
+        [ForeignKey("roles")]
+        public int rolID { get; set; }
+        public Roles rolesU { get; set; }
 
     }
 }
